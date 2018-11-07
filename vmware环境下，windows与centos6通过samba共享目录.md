@@ -31,7 +31,7 @@ service smb start
 
 ## windows连接
 ctrl+r
-\\192.168.137.128
+\\192.168.137.128  
 ![Alt text](https://raw.githubusercontent.com/joql/PersonNote/master/public/img/samba-1.webp)
 
 ## 注意
