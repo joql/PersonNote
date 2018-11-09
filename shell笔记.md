@@ -14,3 +14,5 @@ echo $timeStamp
 echo $currentTimeStamp
 
 ```
+
+### 双层循环时，循环内修改的变量，循环外不生效
