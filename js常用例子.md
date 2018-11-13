@@ -20,3 +20,10 @@ if (isWx) {
 	console.log(非Wx);
 }
 ```
+
+### 判断数组存在某值
+```
+[1,2,3].indexOf(1)   // return 0
+[1,2,3].indexOf(3)   // return 2
+
+```

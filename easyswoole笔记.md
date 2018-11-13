@@ -49,3 +49,23 @@ do
 done
 
 ```
+
+
+### nginx 转发
+```
+location / {
+        proxy_http_version 1.1;
+        proxy_set_header Connection "keep-alive";
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header server_name $server_name;
+        //允许cros跨域访问
+        add_header 'Access-Control-Allow-Origin' '*';
+        add_header 'Access-Control-Allow-Methods' "POST, GET, OPTIONS";
+      	add_header 'Access-Control-Allow-Headers' "Origin, Authorization, Accept, auth";
+      	add_header 'Access-Control-Allow-Credentials' true;
+        if (!-e $request_filename){
+            proxy_pass http://localhost:9502;
+        }
+    }
+
+```
