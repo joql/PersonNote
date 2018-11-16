@@ -1,11 +1,13 @@
 # php常用函数
 
 ## 目录
-#### xml转array
-#### ajax返回
-#### 获取系统类型
-#### 图片保存 base64
-#### curl
+1. xml转array
+2. ajax返回
+3. 获取系统类型
+4. 图片保存 base64
+5. curl
+6. 获得当日凌晨的时间戳
+7. server数组
  
 ### xml转array
 ```
@@ -187,4 +189,80 @@ function saveBase64Img($base64string,$savePath,$old_img = '',$img_name='',$allow
 }
 ```
 
-
+### 获得当日凌晨的时间戳
+```
+$today = strtotime(date("Y-m-d"),time());
+```
+### server数组
+```
+array(34) {
+  ["USER"]=>
+  string(3) "www"
+  ["HOME"]=>
+  string(9) "/home/www"
+  ["FCGI_ROLE"]=>
+  string(9) "RESPONDER"
+  ["SCRIPT_FILENAME"]=>
+  string(32) "/www/wwwroot/test.cn/install.php"
+  ["QUERY_STRING"]=>
+  string(0) ""
+  ["REQUEST_METHOD"]=>
+  string(3) "GET"
+  ["CONTENT_TYPE"]=>
+  string(0) ""
+  ["CONTENT_LENGTH"]=>
+  string(0) ""
+  ["SCRIPT_NAME"]=>
+  string(12) "/install.php"
+  ["REQUEST_URI"]=>
+  string(12) "/install.php"
+  ["DOCUMENT_URI"]=>
+  string(12) "/install.php"
+  ["DOCUMENT_ROOT"]=>
+  string(20) "/www/wwwroot/test.cn"
+  ["SERVER_PROTOCOL"]=>
+  string(8) "HTTP/1.1"
+  ["REQUEST_SCHEME"]=>
+  string(4) "http"
+  ["GATEWAY_INTERFACE"]=>
+  string(7) "CGI/1.1"
+  ["SERVER_SOFTWARE"]=>
+  string(12) "nginx/1.12.2"
+  ["REMOTE_ADDR"]=>
+  string(12) "171.11.0.162"
+  ["REMOTE_PORT"]=>
+  string(5) "11359"
+  ["SERVER_ADDR"]=>
+  string(12) "47.96.40.249"
+  ["SERVER_PORT"]=>
+  string(2) "80"
+  ["SERVER_NAME"]=>
+  string(7) "test.cn"
+  ["REDIRECT_STATUS"]=>
+  string(3) "200"
+  ["PATH_INFO"]=>
+  string(0) ""
+  ["HTTP_HOST"]=>
+  string(12) "47.96.40.249"
+  ["HTTP_CONNECTION"]=>
+  string(10) "keep-alive"
+  ["HTTP_UPGRADE_INSECURE_REQUESTS"]=>
+  string(1) "1"
+  ["HTTP_USER_AGENT"]=>
+  string(115) "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36"
+  ["HTTP_ACCEPT"]=>
+  string(85) "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8"
+  ["HTTP_ACCEPT_ENCODING"]=>
+  string(13) "gzip, deflate"
+  ["HTTP_ACCEPT_LANGUAGE"]=>
+  string(14) "zh-CN,zh;q=0.9"
+  ["HTTP_COOKIE"]=>
+  string(290) "serverType=nginx; order=id%20desc; memSize=2006; uploadSize=1073741824; rank=a; Path=/www/wwwroot/WeiXinKaiFa; BT_PANEL=c9854f04c616c20675a10fe704561624e909880d; backup_path=/www/backup; memRealUsed=566; mem-before=566/2006%20%28MB%29; upNet=0.51; downNet=0.28; apacheVersion=; phpVersion=0"
+  ["PHP_SELF"]=>
+  string(12) "/install.php"
+  ["REQUEST_TIME_FLOAT"]=>
+  float(1542288330.0927)
+  ["REQUEST_TIME"]=>
+  int(1542288330)
+}
+```
