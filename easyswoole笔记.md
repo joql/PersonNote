@@ -3,7 +3,7 @@
 
 ### 安装
 
-  0. 基础环境
+  0. 基础环境  
     ```
     curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-6.repo
     yum makecache
@@ -12,20 +12,22 @@
     ntpdate ntp.api.bz
     ```
 
-  1. 安装php7.2
+  1. 安装php7.2  
     ```
     
     wget http://cn2.php.net/distributions/php-7.2.12.tar.gz
     mv php-7.2.12.tar.gz /home/
     tar -xvf php-7.2.12.tar.gz
-    cd php-7.2.12.tar.gz
-    ./configure --prefix=/home/php72 --with-config-file-path=/home/php72/etc --enable-mysqlnd --with-mysqli=mysqlnd --with-pdo-mysql=mysqlnd --with-iconv-dir --with-zlib  --disable-rpath  --enable-shmop --enable-sysvsem --enable-inline-optimization --with-curl --enable-mbregex --enable-mbstring --enable-intl --with-openssl --with-mhash  --enable-sockets
+    cd php-7.2.12
+    ./configure --prefix=/home/php72 --with-config-file-path=/home/php72/etc --enable-mysqlnd --with-mysqli=mysqlnd --with-pdo-mysql=mysqlnd --with-iconv-dir --with-zlib  --disable-rpath  --enable-shmop --enable-sysvsem --enable-inline-optimization --with-curl --enable-mbregex --enable-mbstring --enable-intl --with-openssl --with-mhash  --enable-sockets --with-mysql
     make && make install
 
     // /etc/profile 添加环境变量
+    // 拷贝 php.ini
+    cp /home/php-7.2.12/php.ini-production /home/php72/etc/php.ini
 
     ```
-  2. 安装redis
+  2. 安装redis  
     ```
     wget http://download.redis.io/releases/redis-4.0.9.tar.gz
     tar -xvf redis-4.0.9.tar.gz
@@ -36,7 +38,7 @@
     //后台启动  ./redis-server ./redis.conf
     cp /home/redis-4.0.9/redis.conf ./bin/
     ```
-  3. 安装hiredis
+  3. 安装hiredis  
     ```
     wget --no-check-certificate https://github.com/redis/hiredis/archive/v0.14.0.tar.gz
     tar -zxvf v0.14.0.tar.gz
@@ -50,7 +52,7 @@
     ldconfig
     ```
 
-  4. 安装phpiredis
+  4. 安装phpiredis  
     ```
     wget --no-check-certificate https://github.com/nrk/phpiredis/archive/v1.0.0.tar.gz
     tar -xvf v1.0.0.tar.gz
@@ -58,13 +60,13 @@
     phpize && ./configure --enable-phpiredis
     make && make install
     ```
-  5. 安装nghttp2
+  5. 安装nghttp2  
     ```
     wget --no-check-certificate https://github.com/nghttp2/nghttp2/releases/download/v1.30.0/nghttp2-1.30.0.tar.bz2
     tar -jxvf nghttp2-1.30.0.tar.bz2
     ./configure && make && make install
     ```
-  6. 安装swoole
+  6. 安装swoole  
     ```
     wget https://github.com/swoole/swoole-src/archive/master.tar.gz
     phpize
