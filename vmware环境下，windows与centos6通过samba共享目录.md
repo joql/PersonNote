@@ -12,7 +12,7 @@
 comment = this is linux share directory  
 ;共享路径  
 path = /home/samba/share  
-available = yes  
+;available = yes  
 browseable = yes  
 public = yes  
 writable = yes  
@@ -22,17 +22,17 @@ user = www
 
 ## 设置samba登陆密码
 
-// www为用户名，必须是系统内存在的，设置的密码专用于登陆samba
+// www为用户名，必须是系统内存在的，设置的密码专用于登陆samba  
 smbpasswd -a www
 
 
 ## 运行
-service smb start
+service smb start  
 
 ## windows连接
-ctrl+r
+ctrl+r  
 \\192.168.137.128  
-![Alt text](https://raw.githubusercontent.com/joql/PersonNote/master/public/img/samba-1.webp)
+![Alt text](https://raw.githubusercontent.com/joql/PersonNote/master/public/img/samba-1.webp)  
 
 ## 注意
-  1. 无法连接时尝试关闭防火墙
+  1. 无法连接时尝试关闭防火墙  
