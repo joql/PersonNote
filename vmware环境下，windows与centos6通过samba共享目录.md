@@ -9,15 +9,15 @@
 
 ;共享文件名
 [share]
-comment = this is linux share directory
-;共享路径
-path = /home/samba/share
-available = yes
-browseable = yes
-public = yes
-writable = yes
-;共享访问账号，必须是系统内存在的
-user = www
+comment = this is linux share directory  
+;共享路径  
+path = /home/samba/share  
+available = yes  
+browseable = yes  
+public = yes  
+writable = yes  
+;共享访问账号，必须是系统内存在的  
+user = www  
 
 
 ## 设置samba登陆密码
