@@ -14,7 +14,6 @@
 
   1. 安装php7.2  
     ```
-    
     wget http://cn2.php.net/distributions/php-7.2.12.tar.gz
     mv php-7.2.12.tar.gz /home/
     tar -xvf php-7.2.12.tar.gz
@@ -25,7 +24,6 @@
     // /etc/profile 添加环境变量
     // 拷贝 php.ini
     cp /home/php-7.2.12/php.ini-production /home/php72/etc/php.ini
-
     ```
   2. 安装redis  
     ```

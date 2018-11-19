@@ -35,4 +35,4 @@ ctrl+r
 ![Alt text](https://raw.githubusercontent.com/joql/PersonNote/master/public/img/samba-1.webp)  
 
 ## 注意
-  1. 无法连接时尝试关闭防火墙  
+  1. 无法连接时尝试关闭防火墙或者开启137、445端口
