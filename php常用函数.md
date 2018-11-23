@@ -1,15 +1,11 @@
 # php常用函数
 
-## 目录
-1. xml array 互转
-2. ajax返回
-3. 获取系统类型
-4. 图片保存 base64
-5. curl
-6. 获得当日凌晨的时间戳
-7. server数组
- 
+[TOC]
+
+
+
 ### xml array 互转
+
 ```
 	/**
      * use for:xml转array
@@ -218,9 +214,14 @@ function saveBase64Img($base64string,$savePath,$old_img = '',$img_name='',$allow
 }
 ```
 
-### 获得当日凌晨的时间戳
+### 获取时间戳
 ```
-$today = strtotime(date("Y-m-d"),time());
+    //当日凌晨
+    $today = strtotime(date("Y-m-d"),time());
+    //当月开始
+    $month_start = strtotime(date("Y-m-01 00:00:00", time()));
+    //当月结束
+    $month_end = strtotime(date("Y-m-t 23:59:59", time()));
 ```
 ### server数组
 ```
@@ -294,4 +295,37 @@ array(34) {
   ["REQUEST_TIME"]=>
   int(1542288330)
 }
+```
+
+### 数组自定义键值排序
+```
+//方法1  效率是方法2的2-3倍
+function array_sort($array,$keys,$type='asc'){
+    //$array为要排序的数组,$keys为要用来排序的键名,$type默认为升序排序
+    $keysvalue = $new_array = array();
+    foreach ($array as $k=>$v){
+        $keysvalue[$k] = $v[$keys];
+    }
+    if($type == 'asc'){
+        asort($keysvalue);
+    }else{
+        arsort($keysvalue);
+    }
+    reset($keysvalue);
+    foreach ($keysvalue as $k=>$v){
+        $new_array[$k] = $array[$k];
+    }
+    return $new_array;
+}
+
+//方法2
+function arraySort($array, $keys, $sort = SORT_DESC) {
+    $keysValue = [];
+    foreach ($array as $k => $v) {
+        $keysValue[$k] = $v[$keys];
+    }
+    array_multisort($keysValue, $sort, $array);
+    return $array;
+}
+
 ```
