@@ -1,5 +1,9 @@
 # js常用例子
 
+[TOC]
+
+
+
 ### 识别iso客户端
 ```
 var u = navigator.userAgent;
@@ -25,5 +29,23 @@ if (isWx) {
 ```
 [1,2,3].indexOf(1)   // return 0
 [1,2,3].indexOf(3)   // return 2
+```
+
+### 复制到剪贴板
 
 ```
+function copy(el) {
+	var range = document.createRange();
+	var end = el.childNodes.length;
+	range.setStart(el,0);
+	range.setEnd(el,end);
+
+	var selection = window.getSelection();
+	selection.removeAllRanges();
+	selection.addRange(range);
+	document.execCommand("copy",false,null);
+	selection.removeRange(range);
+}
+
+```
+
