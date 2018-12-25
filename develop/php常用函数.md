@@ -328,3 +328,10 @@ function arraySort($array, $keys, $sort = SORT_DESC) {
 }
 
 ```
+
+### excel ERR_INVALID_RESPONSE
+
+```
+下载前调用ob_end_clean()清空缓存区
+```
+

@@ -5,6 +5,7 @@
 
 
 ### 识别iso客户端
+
 ```
 var u = navigator.userAgent;
 var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
@@ -16,6 +17,7 @@ if (isiOS) {
 ```
 
 ### 识别微信浏览器
+
 ```
 var isWx = navigator.userAgent.toLowerCase().indexOf('micromessenger') > -1 || typeof navigator.wxuserAgent !== "undefined"; //wx
 if (isWx) {
@@ -48,4 +50,22 @@ function copy(el) {
 }
 
 ```
+
+### requirejs学习
+
+> 用途
+>
+> 1.实现js的异步加载
+>
+> 2.处理模块之间的依赖性
+
+### 杂记
+
+```
+//函数定义后，函数名就是一个可用的对象变量
+
+//var 定义全局变量 函数内可调用函数外的变量
+```
+
+
 

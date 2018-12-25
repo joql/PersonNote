@@ -196,3 +196,7 @@ $uri = strtolower($uri); //忽略大小写
 > ```
 >
 >
+
+### 获取本机域名
+
+  $this->request()->getHeaderLine('host')
