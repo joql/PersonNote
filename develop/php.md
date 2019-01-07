@@ -1,10 +1,13 @@
-# php常用函数
+# php
 
 [TOC]
 
-
+## 函数库
 
 ### xml array 互转
+
+  **key: xml/array 互转**
+
 ```
 	/**
      * use for:xml转array
@@ -50,6 +53,9 @@
 ```
 
 ### ajax返回
+
+  **key: ajax-json 返回**
+
 ```
 function returnAjax($code, $msg = '', $data = array()){
     header('Content-Type:application/json; charset=utf-8');
@@ -58,6 +64,9 @@ function returnAjax($code, $msg = '', $data = array()){
 ```
 
 ### 获取系统类型
+
+  **key: 系统类型 获取**
+
 ```
 function getOS(){
     $agent = strtolower($_SERVER['HTTP_USER_AGENT']);
@@ -94,6 +103,9 @@ function getOS(){
 }
 ```
 ### 图片保存 base64
+
+  **key: base64图片  保存**
+
 ```
 /**
  * TODO: 图片保存 base64
@@ -182,6 +194,9 @@ function saveBase64Img($base64string,$savePath,$old_img = '',$img_name='',$allow
 ```
 
 ### curl
+
+  **key: curl**
+
 ```
  function curl($url,array $array ,$type = 'post') {
     $ch = curl_init();
@@ -214,6 +229,9 @@ function saveBase64Img($base64string,$savePath,$old_img = '',$img_name='',$allow
 ```
 
 ### 获取时间戳
+
+  **key: 时间戳 获取**
+
 ```
     //当日凌晨
     $today = strtotime(date("Y-m-d"),time());
@@ -222,7 +240,68 @@ function saveBase64Img($base64string,$savePath,$old_img = '',$img_name='',$allow
     //当月结束
     $month_end = strtotime(date("Y-m-t 23:59:59", time()));
 ```
+### 数组自定义键值排序
+
+  **key: 数组 排序 键值**
+
+```
+//方法1  效率是方法2的2-3倍
+function array_sort($array,$keys,$type='asc'){
+    //$array为要排序的数组,$keys为要用来排序的键名,$type默认为升序排序
+    $keysvalue = $new_array = array();
+    foreach ($array as $k=>$v){
+        $keysvalue[$k] = $v[$keys];
+    }
+    if($type == 'asc'){
+        asort($keysvalue);
+    }else{
+        arsort($keysvalue);
+    }
+    reset($keysvalue);
+    foreach ($keysvalue as $k=>$v){
+        $new_array[$k] = $array[$k];
+    }
+    return $new_array;
+}
+
+//方法2
+function arraySort($array, $keys, $sort = SORT_DESC) {
+    $keysValue = [];
+    foreach ($array as $k => $v) {
+        $keysValue[$k] = $v[$keys];
+    }
+    array_multisort($keysValue, $sort, $array);
+    return $array;
+}
+
+```
+
+### excel ERR_INVALID_RESPONSE
+
+```
+下载前调用ob_end_clean()清空缓存区
+```
+
+### 生成正负随机数
+
+  **key: 正负随机数**
+
+  mt_stand();
+
+  mt_rand(-10,10);
+
+
+
+
+
+
+
+## 系统变量
+
 ### server数组
+
+  **key: $_SERVER**
+
 ```
 array(34) {
   ["USER"]=>
@@ -296,42 +375,5 @@ array(34) {
 }
 ```
 
-### 数组自定义键值排序
-```
-//方法1  效率是方法2的2-3倍
-function array_sort($array,$keys,$type='asc'){
-    //$array为要排序的数组,$keys为要用来排序的键名,$type默认为升序排序
-    $keysvalue = $new_array = array();
-    foreach ($array as $k=>$v){
-        $keysvalue[$k] = $v[$keys];
-    }
-    if($type == 'asc'){
-        asort($keysvalue);
-    }else{
-        arsort($keysvalue);
-    }
-    reset($keysvalue);
-    foreach ($keysvalue as $k=>$v){
-        $new_array[$k] = $array[$k];
-    }
-    return $new_array;
-}
-
-//方法2
-function arraySort($array, $keys, $sort = SORT_DESC) {
-    $keysValue = [];
-    foreach ($array as $k => $v) {
-        $keysValue[$k] = $v[$keys];
-    }
-    array_multisort($keysValue, $sort, $array);
-    return $array;
-}
-
-```
-
-### excel ERR_INVALID_RESPONSE
-
-```
-下载前调用ob_end_clean()清空缓存区
-```
+## 知识点
 
