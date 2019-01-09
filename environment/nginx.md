@@ -115,5 +115,32 @@ server {
 
 ## 语法
 
+## 解决方案
 
+### ws通过nginx转发为wss
 
+  http://114.215.168.91:7273 为原ws地址,**ORIGIN**头用来过HTTP_ORIGIN认证
+
+```nginx
+location /wss {
+        proxy_pass http://114.215.168.91:7273;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "Upgrade";
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header ORIGIN "http://example.com";
+    }
+```
+
+### 访问密码
+
+  htpasswd命令提示不存在时通过 **yum -y install httpd** 安装
+
+```nginx
+location / {
+    	 auth_basic "NY";
+         auth_basic_user_file /www/conf/passwd.db;
+    }
+```
+
+  **htpasswd -c /www/conf/passwd.db baoxy** 然后输入密码

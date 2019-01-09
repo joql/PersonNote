@@ -9,3 +9,7 @@
   top -M 查看实时状态。
 
 ​    M  按内存使用率排序
+
+### 统计字数并排序
+
+  awk '{print $1}' ip.log | sort | uniq -c | sort -n -r
