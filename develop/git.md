@@ -1,16 +1,30 @@
 
 
-# git常见问题
+# git
 
 [TOC]
 
+## 常见问题
 
-
-### git 错误
+### git异常
 
 - NotSupportedException encountered. ServicePointManager ▒▒֧▒־▒▒▒ localhost ▒▒▒▒▒Ĵ▒▒▒	
-    - git config --global http.proxy "127.0.0.1:1080"
-- 
+
+    ```bash
+    git config --global http.proxy "127.0.0.1:1080"
+    ```
+
+- bash 中文乱码
+
+    ```bash
+    场景："\345\274\200\345\217\221\344\273\273\345\212\241\346\226\207\346\241\243/Openfire\347\246\273\347\272\277\346\266\210\346\201\25
+    原因：bash会对0x80以上的字符进行quote
+    方案：git config --global core.quotepath false
+    ```
+
+    
+
+## 部署
 
 ### hook
 
