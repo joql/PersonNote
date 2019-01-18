@@ -19,7 +19,7 @@ if (!-e $request_filename) {
 ### 报错
 
 - 找不到Yaf\Loader类
-    [yaf配置项参考文件](http://www.laruence.com/manual/yaf.ini.html)
+  [yaf配置项参考文件](http://www.laruence.com/manual/yaf.ini.html)
 
   ```
   //错误信息： Class 'Yaf\Loader' not found in
@@ -27,7 +27,15 @@ if (!-e $request_filename) {
   //解决方案：php.ini文件中加入 yaf.use_namespace=1
   ```
 
-  
+- Couldn't find bootstrap
+
+    ```
+    //原因：application 中 application.directory 没有配置
+    //解决方案:
+    application.directory 修改成当前目录
+    ```
+
+    
 
 ## 开发手册
 

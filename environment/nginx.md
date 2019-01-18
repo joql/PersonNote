@@ -144,3 +144,16 @@ location / {
 ```
 
   **htpasswd -c /www/conf/passwd.db baoxy** 然后输入密码
+
+### 反向代理
+
+```
+location / {
+		proxy_http_version 1.1;
+        proxy_set_header Connection "keep-alive";
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header server_name $server_name;
+        proxy_pass http://localhost:6501;
+    }
+```
+

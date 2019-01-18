@@ -1,5 +1,22 @@
 # LINUX
 
+## 安装
+
+### ius源安装
+
+  [详细参考地址](https://www.cnblogs.com/f-ck-need-u/p/8494992.html#auto_id_0)
+
+```shell
+[root@xuexi ~]# vim /etc/yum.repos.d/ius.repo
+[ius]
+name=iusrepo
+baseurl=https://mirrors.tuna.tsinghua.edu.cn/ius/stable/CentOS/6/$basearch
+gpgcheck=0
+enable=1
+```
+
+
+
 ## 信息获取
 
 ### cpu和内存使用率查看
@@ -18,7 +35,7 @@
 
 ## 报错
 
-### 网卡启动 
+### 网卡启动
 
 ```linux
 //错误信息: device eth0 does not seem to be present, delaying initialization.
