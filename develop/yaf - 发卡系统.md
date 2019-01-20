@@ -35,7 +35,6 @@ if (!-e $request_filename) {
     application.directory 修改成当前目录
     ```
 
-    
 
 ## 开发手册
 
@@ -88,11 +87,19 @@ new NoticeJs({
 }).show();    
 ```
 
+## 支付参考
+
+### 幻兮支付
+
+[官网](https://www.zhapay.com)
+
+测试账号   **17633398721  ** **123456789a**
+
 
 
 ### 逻辑UI参考
 
 - [用户界面UI参考](http://www.xx1q.com/)  账户 52249557  123456789a
-- [视多发卡，](http://demo.sdfaka.cc/admin.php/index/index.html)  后台账号密码 admin  普通用户账号密码 1234567
+    - [视多发卡，](http://demo.sdfaka.cc/admin.php/index/index.html)  后台账号密码 admin  普通用户账号密码 1234567
 - [自动发卡系统](http://www.yxa1024.com/)
 
