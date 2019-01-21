@@ -95,6 +95,13 @@ new NoticeJs({
 
 测试账号   **17633398721  ** **123456789a**
 
+```
+#跳转支付宝链接
+https://qr.alipay.com/fkx01449rzweotl0a8lxe80?t=1548054987301
+https://qr.alipay.com/fkx04560x0ccx8hsop02mc6?t=1548055143534
+
+```
+
 
 
 ### 逻辑UI参考
