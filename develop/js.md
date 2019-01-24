@@ -42,7 +42,8 @@ if (isWx) {
 
   **key: 复制**
 
-```
+```js
+方法1：
 function copy(el) {
 	var range = document.createRange();
 	var end = el.childNodes.length;
@@ -55,7 +56,17 @@ function copy(el) {
 	document.execCommand("copy",false,null);
 	selection.removeRange(range);
 }
-
+方法2：
+function copy(t) {
+        const input = document.createElement('input');
+        document.body.appendChild(input);
+        input.setAttribute('value', $(t).text());
+        input.select();
+        if (document.execCommand('copy')) {
+            console.log('复制成功');
+        }
+        document.body.removeChild(input);
+    }
 ```
 
 

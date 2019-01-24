@@ -21,3 +21,12 @@
 }
 ```
 
+### 限制显示字数，超出隐藏
+
+```css
+max-width: 76px;
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+```
+

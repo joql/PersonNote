@@ -228,7 +228,7 @@ function saveBase64Img($base64string,$savePath,$old_img = '',$img_name='',$allow
 }
 ```
 
-### 获取时间戳
+### 获取时间
 
   **key: 时间戳 获取**
 
